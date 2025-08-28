@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/InVisionApp/go-logger"
 	kitlog "github.com/go-kit/kit/log"
+	"github.com/helios-ag/go-logger"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

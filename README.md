@@ -1,4 +1,4 @@
-Fork of [InVisionApp/go-health](https://github.com/helios-ag/go-logger)
+Fork of [helios-ag/go-health](https://github.com/helios-ag/go-logger)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/helios-ag/go-logger)](https://goreportcard.com/report/github.com/helios-ag/go-logger)

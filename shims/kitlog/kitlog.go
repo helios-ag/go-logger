@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/InVisionApp/go-logger"
 	kitlog "github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
+	"github.com/helios-ag/go-logger"
 )
 
 type shim struct {
