@@ -4,7 +4,7 @@ package fake
 import (
 	"sync"
 
-	log "github.com/InVisionApp/go-logger"
+	log "github.com/helios-ag/go-logger"
 )
 
 type FakeLogger struct {

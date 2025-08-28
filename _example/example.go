@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/InVisionApp/go-logger"
-	"github.com/InVisionApp/go-logger/shims/_fake"
-	"github.com/InVisionApp/go-logger/shims/logrus"
-	"github.com/InVisionApp/go-logger/shims/testlog"
+	"github.com/helios-ag/go-logger"
+	"github.com/helios-ag/go-logger/shims/_fake"
+	"github.com/helios-ag/go-logger/shims/logrus"
+	"github.com/helios-ag/go-logger/shims/testlog"
 )
 
 func main() {

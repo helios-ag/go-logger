@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/InVisionApp/go-logger"
+	"github.com/helios-ag/go-logger"
 	"github.com/rs/zerolog"
 )
 

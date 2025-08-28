@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/InVisionApp/go-logger"
+	"github.com/helios-ag/go-logger"
 )
 
 // TestLogger is used to capture logs during the execution of a test.
@@ -49,25 +49,25 @@ func (t *TestLogger) write(level, msg string) {
 	t.count.inc()
 }
 
-//Debugln log line message
+// Debugln log line message
 func (t *TestLogger) Debugln(msg ...interface{}) {
 	a := fmt.Sprintln(msg...)
 	t.write("DEBUG", a[:len(a)-1])
 }
 
-//Infoln log line message
+// Infoln log line message
 func (t *TestLogger) Infoln(msg ...interface{}) {
 	a := fmt.Sprintln(msg...)
 	t.write("INFO", a[:len(a)-1])
 }
 
-//Warnln log line message
+// Warnln log line message
 func (t *TestLogger) Warnln(msg ...interface{}) {
 	a := fmt.Sprintln(msg...)
 	t.write("WARN", a[:len(a)-1])
 }
 
-//Errorln log line message
+// Errorln log line message
 func (t *TestLogger) Errorln(msg ...interface{}) {
 	a := fmt.Sprintln(msg...)
 	t.write("ERROR", a[:len(a)-1])
