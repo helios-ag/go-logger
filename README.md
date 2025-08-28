@@ -1,11 +1,8 @@
-| :warning: This project is no longer actively supported.
-| ---
+Fork of [InVisionApp/go-health](https://github.com/helios-ag/go-logger)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
-[![Build Status](https://travis-ci.com/InVisionApp/go-logger.svg?token=KosA43m1X3ikri8JEukQ&branch=master)](https://travis-ci.com/InVisionApp/go-logger)
-[![codecov](https://codecov.io/gh/InVisionApp/go-logger/branch/master/graph/badge.svg?token=hhqA1l88kx)](https://codecov.io/gh/InVisionApp/go-logger)
-[![Go Report Card](https://goreportcard.com/badge/github.com/InVisionApp/go-logger)](https://goreportcard.com/report/github.com/InVisionApp/go-logger)
-[![Godocs](https://img.shields.io/badge/golang-documentation-blue.svg)](https://godoc.org/github.com/InVisionApp/go-logger)
+[![Go Report Card](https://goreportcard.com/badge/github.com/helios-ag/go-logger)](https://goreportcard.com/report/github.com/helios-ag/go-logger)
+[![Godocs](https://img.shields.io/badge/golang-documentation-blue.svg)](https://godoc.org/github.com/helios-ag/go-logger)
 
 
 
@@ -28,7 +25,7 @@ Finally, there is a `WithFields(Fields)` method that will allow you to define a 
 The simple logger is a wrapper for the standard logging library which meets this logger interface. It provides very basic logging functionality with log levels in messages.
 
 ```go
-import "github.com/InVisionApp/go-logger"
+import "github.com/helios-ag/go-logger"
 
 logger := log.NewSimple()
 logger.Debug("this is a debug message")
@@ -42,7 +39,7 @@ output:
 If you do not wish to perform any sort of logging whatsoever, you can point to a noop logger. This is useful for silencing logs in tests, or allowing users to turn of logging in your library.
 
 ```go
-import "github.com/InVisionApp/go-logger"
+import "github.com/helios-ag/go-logger"
 
 logger := log.NewNoop()
 logger.Debug("this is a debug message")
@@ -53,7 +50,7 @@ _no output_
 This shim allows you to use logrus as your logger implementation. If you wish to use the standard logrus logger, pass `nil` to the constructor. Otherwise, pass in your own `logrus.Logger`.
 
 ```go
-import "github.com/InVisionApp/go-logger/shims/logrus"
+import "github.com/helios-ag/go-logger/shims/logrus"
 
 // Default logrus logger
 logger := logrus.New(nil)
@@ -64,7 +61,7 @@ Or alternatively, you can provide your own logrus logger:
 ```go
 import (
 	lgrs "github.com/sirupsen/logrus"
-	"github.com/InVisionApp/go-logger/shims/logrus"
+	"github.com/helios-ag/go-logger/shims/logrus"
 )
 
 myLogrus := lgrs.New()
@@ -86,7 +83,7 @@ Alternatively, you can pass your own instance of `zerolog.Logger` to `New(...)`.
 
 Using the `zerolog` default logger:
 ```go
-import "github.com/InVisionApp/go-logger/shims/zerolog"
+import "github.com/helios-ag/go-logger/shims/zerolog"
 
 func main() {
 	logger := zerolog.New(nil)
@@ -101,7 +98,7 @@ import (
 	"os"
 	
 	zl "github.com/rs/zerolog"
-	"github.com/InVisionApp/go-logger/shims/zerolog"
+	"github.com/helios-ag/go-logger/shims/zerolog"
 )
 
 func main() {
