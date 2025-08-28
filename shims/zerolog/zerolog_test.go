@@ -9,10 +9,11 @@ import (
 	"github.com/helios-ag/go-logger"
 	"github.com/rs/zerolog"
 
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 	"io"
 	"os"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
 )
 
 var _ = Describe("satisfies interface", func() {
@@ -108,10 +109,10 @@ var _ = Describe("zerolog logger", func() {
 			})
 			l = New(&zl)
 			logFuncs := map[string]func(...interface{}){
-				"DEBUG?": l.Debugln,
-				"INFO":   l.Infoln,
-				"WARN":   l.Warnln,
-				"ERROR?": l.Errorln,
+				"DBG?": l.Debugln,
+				"INF":  l.Infoln,
+				"WRN":  l.Warnln,
+				"ERR":  l.Errorln,
 			}
 			for level, logFunc := range logFuncs {
 				logFunc("hi", "there")
@@ -163,7 +164,7 @@ var _ = Describe("zerolog logger", func() {
 			os.Stdout = old
 
 			out := <-outC
-			Expect(out).To(MatchRegexp(`{"level":"debug","time":"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z?(-\d{2}:\d{2})?","message":"i am default"}`))
+			Expect(out).To(MatchRegexp(`{"level":"debug","time":"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})","message":"i am default"}`))
 		})
 	})
 	Context("fields", func() {
