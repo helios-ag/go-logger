@@ -115,8 +115,10 @@ func (s *shim) Errorf(format string, args ...interface{}) {
 // zerolog logger, with the provided fields added to the log string,
 // as a key-value pair
 func (s *shim) WithFields(fields log.Fields) log.Logger {
-	lg := s.logger.With().Fields(fields).Logger()
-	s.logger = &lg
-
-	return s
+	zl := s.logger.With()
+	for k, v := range fields {
+		zl = zl.Interface(k, v)
+	}
+	newLogger := zl.Logger()
+	return &shim{logger: &newLogger}
 }
