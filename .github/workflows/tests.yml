@@ -32,6 +32,8 @@ jobs:
           go-version: ${{ env.goVersion }}
       - uses: actions/checkout@v5
       - run: make test/coverage
+      - run: cat coverage.txt
+      - run: cat ./coverage.txt
       - uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
