@@ -38,7 +38,9 @@ jobs:
     needs: test-integration
     name: codacy-coverage-reporter
     steps:
+      - run: ls -la
       - uses: actions/checkout@v5
+      - run: ls -la
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
