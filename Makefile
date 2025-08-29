@@ -37,7 +37,7 @@ test/cover: ## Run all tests + open coverage report for all packages
 	go tool cover -html=.coverage
 	$(RM) .coverage .coverage.tmp
 
-test/codecov: ## Run all tests + open coverage report for all packages
+test/coverage: ## Run all tests + open coverage report for all packages
 	ECODE=0; \
 	for PKG in $(TEST_PACKAGES); do \
 		go test -covermode=$(COVERMODE) -coverprofile=profile.out $$PKG; \

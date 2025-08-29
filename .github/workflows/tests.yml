@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v5
       - run: make test/unit
   
-  test-integration:
+  test-and-covreport:
     name: test-integration
     runs-on: ubuntu-latest
     steps:
@@ -31,4 +31,5 @@ jobs:
         with:
           go-version: ${{ env.goVersion }}
       - uses: actions/checkout@v5
-      - run: make test/integration
+      - run: make test/coverage
+      - run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report --force-coverage-parser go --project-token ${{ secrets.CODACY_PROJECT_TOKEN }} -r coverage.txt
