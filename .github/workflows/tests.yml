@@ -32,4 +32,4 @@ jobs:
           go-version: ${{ env.goVersion }}
       - uses: actions/checkout@v5
       - run: make test/coverage
-      - run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report --force-coverage-parser --project-token ${{ secrets.CODACY_PROJECT_TOKEN }} go -r coverage.txt
+      - run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report --force-coverage-parser go --project-token ${{ secrets.CODACY_PROJECT_TOKEN }} -r coverage.txt
